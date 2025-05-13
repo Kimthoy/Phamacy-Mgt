@@ -62,5 +62,18 @@
     "ButtonAddMedicine": "បន្ថែម ថ្នាំ",
     "ButtonAddSupplier": "បន្ថែម អ្នកផ្គត់ផ្គង់",
     "CloseScanner": "បិទ ស្កេន"
+  },
+  "MedicineList": {
+    "MedicineList": "បញ្ជីថ្នាំ",
+    "name": "ឈ្មោះថ្នាំ",
+    "generic": "ឈ្មោះទូទៅ",
+    "weight": "ទម្ងន់",
+    "category": "ប្រភេទ",
+    "price": "តម្លៃ",
+    "stock": "ស្តុក",
+    "Status": "ស្ថានភាព",
+    "date": "កាលបរិច្ឆេទ",
+    "Action": "សកម្មភាព"
   }
+  
 }

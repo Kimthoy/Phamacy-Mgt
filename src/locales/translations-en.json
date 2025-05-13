@@ -67,5 +67,17 @@
     "ButtonAddMedicine": "Add Medicine",
     "ButtonAddSupplier": "Add Supplier",
     "CloseScanner": "Close Scanner"
+  },
+  "MedicineList": {
+    "MedicineList": "Medicine List",
+    "name": "Medicine Name",
+    "generic": "Generic Name",
+    "weight": "Weight",
+    "category": "Category",
+    "price": "Price",
+    "stock": "Stock",
+    "Status": "Status",
+    "date": "Date",
+    "Action": "Action"
   }
 }
