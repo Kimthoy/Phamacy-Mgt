@@ -1,7 +1,8 @@
 import { useState } from "react";
-
+import { useTranslation } from "../../hooks/useTranslation";
 
 const AddWastageReturn = () => {
+  const { t } = useTranslation();
   //check amount input
   const [amount, setAmount] = useState("");
 

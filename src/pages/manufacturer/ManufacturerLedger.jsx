@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "../../hooks/useTranslation";
 
 const medicines = [
   {
@@ -28,6 +29,7 @@ const medicines = [
 ];
 
 const ManufacturerLedger = () => {
+  const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [searchTerm, setSearchTerm] = useState("");
@@ -58,33 +60,33 @@ const ManufacturerLedger = () => {
   return (
     <div className="p-6 bg-white shadow-md rounded-md overflow-x-auto">
       <h2 className="text-2xl font-bold mb-2 text-gray-500">
-        Manufacturer Ledger
+        {t("ManufacturerLedger.ManufacturerLedger")}
       </h2>
       <button
         type="button"
         onClick={toggleForm}
         className="border hover:border-emerald-400 hover:text-emerald-400 text-gray-400 px-4 py-2 rounded-md  transition float-end"
       >
-        + Add Manufacturer
+        {t("ManufacturerLedger.AddManufacturerLedgerButton")}
       </button>
       {isFormOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-1/2 relative">
-            <h2 className="text-xl font-bold ">Add Manufacturer</h2>
+            <h2 className="text-xl font-bold ">{t("ManufacturerLedger.AddManufacturerLedgerList")}</h2>
             <p className="text-gray-500 mb-4">
-              The manufacturer must be fill all this field.
+              {t("ManufacturerLedger.AddManufacturerLedgerList-Description")}
             </p>
             <form>
               <div className="grid grid-cols-1 md:grid-cols-2  gap-8">
                 <div className="flex flex-col">
                   <label htmlFor="" className="mb-2">
-                    Date
+                    {t("ManufacturerLedger.EnterDate")}
                   </label>
 
                   <input
                     type="date"
                     name="date"
-                    placeholder="Date"
+                    placeholder={t("ManufacturerLedger.Date")}
                     // value={medicine.medicine_name}
                     // onChange={handleChange}
                     className="border border-gray-400   px-2 text-sm py-2 rounded-[4px] font-light   focus:outline-green-400  focus:border-green-700 focus:placeholder:text-green-400"
@@ -93,12 +95,12 @@ const ManufacturerLedger = () => {
                 </div>
                 <div className="flex flex-col">
                   <label htmlFor="" className="mb-2 font-medium ">
-                    Credit
+                    {t("ManufacturerLedger.EnterCredit")}
                   </label>
 
                   <input
                     type="number"
-                    placeholder="Credit"
+                    placeholder={t("ManufacturerLedger.Credit")}
                     name="Credit"
                     // value={medicine.price}
                     // onChange={handleChange}
@@ -109,12 +111,12 @@ const ManufacturerLedger = () => {
 
                 <div className="flex flex-col">
                   <label htmlFor="" className="mb-2 font-medium ">
-                    Debit
+                    {t("ManufacturerLedger.EnterDebit")}
                   </label>
 
                   <input
                     type="number"
-                    placeholder="Debit"
+                    placeholder={t("ManufacturerLedger.Debit")}
                     name="debit"
                     // value={medicine.price}
                     // onChange={handleChange}
@@ -125,12 +127,12 @@ const ManufacturerLedger = () => {
 
                 <div className="flex flex-col">
                   <label htmlFor="" className="mb-2">
-                    Balance
+                    {t("ManufacturerLedger.EnterBalance")}
                   </label>
 
                   <input
                     type="number"
-                    placeholder="Balance"
+                    placeholder={t("ManufacturerLedger.Balance")}
                     name="balance"
                     // value={medicine.price}
                     // onChange={handleChange}
@@ -140,12 +142,12 @@ const ManufacturerLedger = () => {
                 </div>
                 <div className="flex flex-col">
                   <label htmlFor="" className="mb-2">
-                    Description
+                    {t("ManufacturerLedger.EnterDescription")}
                   </label>
 
                   <textarea
                     type="text"
-                    placeholder="Description"
+                    placeholder={t("ManufacturerLedger.Description")}
                     name="description"
                     // value={medicine.price}
                     // onChange={handleChange}
@@ -159,14 +161,14 @@ const ManufacturerLedger = () => {
                   type="submit"
                   className="bg-emerald-400 text-white px-2 py-2 mt-5 rounded-md w-full md:w-auto shadow-md active:shadow-none"
                 >
-                  Add Ledger
+                  {t("ManufacturerLedger.AddLedgerButton")}
                 </button>
                 <button
                   type="button"
                   onClick={toggleForm}
                   className=" text-gray-400 px-4 py-2 rounded-md"
                 >
-                  Cancel
+                  {t("ManufacturerLedger.CancelButton")}
                 </button>
               </div>
             </form>
@@ -176,7 +178,7 @@ const ManufacturerLedger = () => {
       <div className="flex flex-wrap gap-4 mb-4">
         <input
           type="text"
-          placeholder="Find ID ..."
+          placeholder={t("ManufacturerLedger.Search")}
           className="border p-2 rounded-md focus:outline-green-500"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
@@ -187,7 +189,7 @@ const ManufacturerLedger = () => {
             htmlFor=""
             className="me-2 text-gray-400 text-xs font-extralight"
           >
-            Filter by Choose start date
+            {t("ManufacturerLedger.ChooseStartDate")}
           </label>
           <input
             type="date"
@@ -202,7 +204,7 @@ const ManufacturerLedger = () => {
             htmlFor=""
             className="me-2 text-gray-400 text-xs font-extralight"
           >
-            Choose end date
+            {t("ManufacturerLedger.ChooseEndDate")}
           </label>
           <input
             type="date"
@@ -219,22 +221,22 @@ const ManufacturerLedger = () => {
           <thead className="border">
             <tr>
               <td className="p-3 text-left text-gray-400 font-light text-[13px]">
-                Invoice No
+                {t("ManufacturerLedger.InvoiceID")}
               </td>
               <td className="p-3 text-left text-gray-400 font-light text-[13px]">
-                Date
+                {t("ManufacturerLedger.ShowDate")}
               </td>
               <td className="p-3 text-left text-gray-400 font-light text-[13px]">
-                Payment Term
+                {t("ManufacturerLedger.PaymentTerm")}
               </td>
               <td className="p-3 text-left text-gray-400 font-light text-[13px]">
-                Debit (USD)
+                {t("ManufacturerLedger.ShowDebit")}
               </td>
               <td className="p-3 text-left text-gray-400 font-light text-[13px]">
-                Credit (USD)
+                {t("ManufacturerLedger.ShowCredit")}
               </td>
               <td className="p-3 text-left text-gray-400 font-light text-[13px]">
-                Balance (USD)
+                {t("ManufacturerLedger.ShowBalance")}
               </td>
             </tr>
           </thead>
@@ -267,7 +269,7 @@ const ManufacturerLedger = () => {
       <div className="flex flex-wrap items-center justify-between mt-4">
         <div className="flex items-center space-x-2">
           <span className="text-gray-400 font-light text-[13px]">
-            Rows per page:
+            {t("ManufacturerLedger.RowsPerPage")}
           </span>
           <select
             className="border p-2 rounded-md"
@@ -289,11 +291,11 @@ const ManufacturerLedger = () => {
             className="px-3 py-1 border rounded-md text-gray-400 font-light text-[13px]"
             disabled={currentPage === 1}
           >
-            Previous
+            {t("ManufacturerLedger.Previous")}
           </button>
 
           <span className="text-gray-400 font-light text-[13px]">
-            Page {currentPage} of {totalPages}
+            {t("ManufacturerLedger.Pages")} {currentPage} {t("ManufacturerLedger.Of")} {totalPages}
           </span>
 
           <button
@@ -303,7 +305,7 @@ const ManufacturerLedger = () => {
             className="px-3 py-1 border rounded-md text-gray-400 font-light text-[13px]"
             disabled={currentPage === totalPages}
           >
-            Next
+            {t("ManufacturerLedger.Next")}
           </button>
         </div>
       </div>

@@ -3,7 +3,14 @@ import { FaEllipsisV } from "react-icons/fa";
 import { BiEdit, BiShow, BiTrash } from "react-icons/bi";
 import { MdWarehouse } from "react-icons/md";
 import { useTranslation } from "../../hooks/useTranslation";
+<<<<<<< HEAD
 import { useTheme } from "../../context/ThemeContext";
+=======
+
+const MedicineList = () => {
+  const { t } = useTranslation();
+
+>>>>>>> 81b16dff066a757a4c18d8311ce5af0e248854b7
 
 const medicines = [
   {
@@ -173,6 +180,7 @@ const MedicineList = () => {
             {selectedMedicines.map((med, index) => {
               const { text, color } = getStatus(med.stock);
               return (
+<<<<<<< HEAD
                 <tr
                   key={index}
                   className="border border-gray-200 dark:border-gray-600 text-xs sm:text-base"
@@ -197,6 +205,30 @@ const MedicineList = () => {
                     {med.date}
                   </td>
                   <td className="p-3 text-[13px] relative">
+=======
+                <tr key={index} className="border text-xs sm:text-base">
+                  <td className="p-3  text-[13px]  text-gray-400">
+                    { t("med.name")}
+                  </td>
+                  <td className="p-3  text-[13px] text-gray-400">
+                    { t("med.generic")}
+                  </td>
+                  <td className="p-3  text-[13px] text-gray-400">
+                    { t("med.weight")}
+                  </td>
+                  <td className="p-3  text-[13px] text-gray-400">
+                    { t("med.category")}
+                  </td>
+                  <td className="p-3  text-[13px] text-gray-400">
+                    { t("med.price")}
+                  </td>
+                  <td className="p-3  text-[13px] text-gray-400">
+                    { t("med.stock")}
+                  </td>
+                  <td className={`p-3 text-[13px]   ${color}`}>{text}</td>
+                  <td className="p-3  text-[13px] text-gray-400">{ t("med.date")}</td>
+                  <td className="p-3  text-[13px] relative">
+>>>>>>> 81b16dff066a757a4c18d8311ce5af0e248854b7
                     <button
                       ref={menuRef}
                       className="p-2 bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-600 dark:text-gray-300"
@@ -276,6 +308,7 @@ const MedicineList = () => {
       </div>
     </div>
   );
+}
 };
 
 export default MedicineList;

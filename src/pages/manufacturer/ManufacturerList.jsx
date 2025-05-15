@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaEllipsisH } from "react-icons/fa";
+import { useTranslation } from "../../hooks/useTranslation";
 // import { FaSquarePlus } from "react-icons/fa6";
 
 const medicines = [
@@ -20,6 +21,7 @@ const getStatus = (status) => {
 };
 
 const Manufacturerlist = () => {
+  const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [searchTerm, setSearchTerm] = useState("");
@@ -56,10 +58,10 @@ const Manufacturerlist = () => {
       <div>
         <div>
           <h2 className="text-2xl font-bold mb-2 text-gray-500">
-            Manufacturer Lists
+            {t("ManufacturerList.ManufacturerList")}
           </h2>
           <p className="text-gray-400 text-sm mb-5">
-            You have total 30 Manufacturer for Pharmacy.
+            {t("ManufacturerList.ManufacturerList-Description")}
           </p>
         </div>
 
@@ -68,27 +70,27 @@ const Manufacturerlist = () => {
           onClick={toggleForm}
           className="border hover:border-emerald-400 hover:text-emerald-400 text-gray-400 px-4 py-2 rounded-md  transition float-end"
         >
-          + Add Manufacturer
+          {t("ManufacturerList.ButtonAddManufacturer")}
         </button>
       </div>
       {isFormOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-1/2 relative">
-            <h2 className="text-xl font-bold ">Add Manufacturer</h2>
+            <h2 className="text-xl font-bold ">{t("ManufacturerList.AddManufacturerList")}</h2>
             <p className="text-gray-500 mb-4">
-              The manufacturer must be fill all this field.
+              {t("ManufacturerList.AddManufacturerList-Description")}
             </p>
             <form>
               <div className="grid grid-cols-1 md:grid-cols-2  gap-8">
                 <div className="flex flex-col">
                   <label htmlFor="" className="mb-2">
-                    Company
+                    {t("ManufacturerList.EnterCompanyName")}
                   </label>
 
                   <input
                     type="text"
                     name="company"
-                    placeholder="Company"
+                    placeholder={t("ManufacturerList.CompanyName")}
                     // value={medicine.medicine_name}
                     // onChange={handleChange}
                     className="border border-gray-400   px-2 text-sm py-2 rounded-[4px] font-light   focus:outline-green-400  focus:border-green-700 focus:placeholder:text-green-400"
@@ -98,12 +100,12 @@ const Manufacturerlist = () => {
 
                 <div className="flex flex-col">
                   <label htmlFor="" className="mb-2 font-medium ">
-                    Email
+                    {t("ManufacturerList.EnterEmail")}
                   </label>
 
                   <input
                     type="email"
-                    placeholder="Email"
+                    placeholder={t("ManufacturerList.Email")}
                     name="phone"
                     // value={medicine.price}
                     // onChange={handleChange}
@@ -113,12 +115,12 @@ const Manufacturerlist = () => {
                 </div>
                 <div className="flex flex-col">
                   <label htmlFor="" className="mb-2">
-                    Phone
+                    {t("ManufacturerList.EnterPhone")}
                   </label>
 
                   <input
                     type="text"
-                    placeholder="Phone"
+                    placeholder={t("ManufacturerList.Phone")}
                     name="phone"
                     // value={medicine.price}
                     // onChange={handleChange}
@@ -129,12 +131,12 @@ const Manufacturerlist = () => {
 
                 <div className="flex flex-col">
                   <label htmlFor="" className="mb-2">
-                    Address
+                    {t("ManufacturerList.EnterAddress")}
                   </label>
 
                   <input
                     type="text"
-                    placeholder="Address"
+                    placeholder={t("ManufacturerList.Address")}
                     name="address"
                     // value={medicine.weight}
                     // onChange={handleChange}
@@ -144,12 +146,12 @@ const Manufacturerlist = () => {
                 </div>
                 <div className="flex flex-col">
                   <label htmlFor="" className="mb-2">
-                    Balance
+                    {t("ManufacturerList.EnterBalance")}
                   </label>
 
                   <input
                     type="text"
-                    placeholder="Balance"
+                    placeholder={t("ManufacturerList.Balance")}
                     name="balance"
                     // value={medicine.price}
                     // onChange={handleChange}
@@ -160,7 +162,7 @@ const Manufacturerlist = () => {
 
                 <div className="flex flex-col">
                   <label htmlFor="" className="mb-2">
-                    Status
+                    {t("ManufacturerList.EnterStatus")}
                   </label>
 
                   <select
@@ -179,14 +181,14 @@ const Manufacturerlist = () => {
                   type="submit"
                   className="bg-emerald-400 text-white px-2 py-2 mt-5 rounded-md w-full md:w-auto shadow-md active:shadow-none"
                 >
-                  Add Manufacturer
+                  {t("ManufacturerList.AddManufacturerListButton")}
                 </button>
                 <button
                   type="button"
                   onClick={toggleForm}
                   className=" text-gray-400 px-4 py-2 rounded-md"
                 >
-                  Cancel
+                  {t("ManufacturerList.Cancel")}
                 </button>
               </div>
             </form>
@@ -197,7 +199,7 @@ const Manufacturerlist = () => {
       <div className="flex flex-wrap gap-4 mb-4">
         <input
           type="text"
-          placeholder="Find ID ..."
+          placeholder={t("ManufacturerList.Search")}
           className="border p-2 rounded-md focus:outline-green-500"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
@@ -210,22 +212,22 @@ const Manufacturerlist = () => {
           <thead className="border">
             <tr>
               <td className="p-3 text-left text-gray-400 font-light text-[13px]">
-                Manufacturer ID
+                {t("ManufacturerList.ID")}
               </td>
               <td className="p-3 text-left text-gray-400 font-light text-[13px]">
-                Company
+                {t("ManufacturerList.Company")}
               </td>
               <td className="p-3 text-left text-gray-400 font-light text-[13px]">
-                Phone
+                {t("ManufacturerList.ShowPhone")}
               </td>
               <td className="p-3 text-left text-gray-400 font-light text-[13px]">
-                Address
+                {t("ManufacturerList.ShowAddress")}
               </td>
               <td className="p-3 text-left text-gray-400 font-light text-[13px]">
-                Balance (USD)
+                {t("ManufacturerList.ShowBalance")}
               </td>
               <td className="p-3 text-left text-gray-400 font-light text-[13px]">
-                Status
+                {t("ManufacturerList.ShowStatus")}
               </td>
               <td className="p-3 text-left text-gray-400">
                 <FaEllipsisH className="hover:text-green-600 text-xl cursor-pointer"></FaEllipsisH>
@@ -266,7 +268,7 @@ const Manufacturerlist = () => {
       <div className="flex flex-wrap items-center justify-between mt-4">
         <div className="flex items-center space-x-2">
           <span className="text-gray-400 font-light text-[13px]">
-            Rows per page:
+            {t("ManufacturerList.RowsPerPage")}
           </span>
           <select
             className="border p-2 rounded-md"
@@ -288,11 +290,11 @@ const Manufacturerlist = () => {
             className="px-3 py-1 border rounded-md text-gray-400 font-light text-[13px]"
             disabled={currentPage === 1}
           >
-            Previous
+            {t("ManufacturerList.Previous")}
           </button>
 
           <span className="text-gray-400 font-light text-[13px]">
-            Page {currentPage} of {totalPages}
+            {t("ManufacturerList.Pages")} {currentPage} {t("ManufacturerList.Of")} {totalPages}
           </span>
 
           <button
@@ -302,7 +304,7 @@ const Manufacturerlist = () => {
             className="px-3 py-1 border rounded-md text-gray-400 font-light text-[13px]"
             disabled={currentPage === totalPages}
           >
-            Next
+            {t("ManufacturerList.Next")}
           </button>
         </div>
       </div>

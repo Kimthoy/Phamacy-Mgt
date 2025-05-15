@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useTranslation } from "../../hooks/useTranslation";
+
+
 
 const API_URL = "http://127.0.0.1:8000/api/login";
 const Login = () => {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error] = useState("");
@@ -41,39 +45,38 @@ const Login = () => {
       <div className="bg-white shadow-md rounded-md flex flex-col md:flex-row w-full max-w-4xl p-6">
         <div className="flex flex-col justify-center md:w-1/2 p-4 text-center md:text-left">
           <h1 className="font-bold text-2xl md:text-3xl mb-3 font-header text-green-500">
-            Welcome <br /> Panharith Pharmacy
+            {t("login.Welcome")} <br /> {t("login.Panharith-Pharmacy")}
           </h1>
           <p className="text-gray-500 text-sm md:text-base">
-            Please enter your email and password to log in to the admin
-            dashboard.
+           {t("login.Your-Pharmacy")}
           </p>
         </div>
 
         <div className="flex flex-col justify-center md:w-1/2 p-4">
           <form className="space-y-4" onSubmit={handleLogin}>
             <div>
-              <p className="text-green-600 text-lg font-semibold">Sign In</p>
+              <p className="text-green-600 text-lg font-semibold">Log In</p>
             </div>
             {error && <p className="text-red-500">{error}</p>}
             <div>
-              <label className="block text-gray-700">Email</label>
+              <label className="block text-gray-700">{t("login.Email")}</label>
               <input
                 type="email"
                 required
                 autoComplete="off"
-                placeholder="Enter email"
+                placeholder={t("login.EnterEmail")}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full bg-gray-200 px-4 py-2 mt-2 shadow-md focus:shadow-none rounded-md focus:outline-green-500"
               />
             </div>
             <div>
-              <label className="block text-gray-700">Password</label>
+              <label className="block text-gray-700">{t("login.Password")}</label>
               <input
                 type="password"
                 required
                 autoComplete="new-password"
-                placeholder="Enter password"
+                placeholder={t("login.EnterPassword")}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full bg-gray-200 px-4 py-2 mt-2 rounded-md shadow-md focus:shadow-none focus:outline-green-500"
@@ -83,7 +86,7 @@ const Login = () => {
               type="submit"
               className="w-full bg-green-500 text-white rounded-md shadow-lg active:shadow-none px-6 py-2 hover:bg-green-600 transition duration-300"
             >
-              Sign In
+              Log In
             </button>
           </form>
         </div>

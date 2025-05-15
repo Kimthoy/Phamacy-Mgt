@@ -2,9 +2,15 @@ import React, { useState } from "react";
 import { FaEllipsisH } from "react-icons/fa";
 import { BiEdit, BiTrash } from "react-icons/bi";
 import { useTranslation } from "../../hooks/useTranslation";
+<<<<<<< HEAD
 import { useTheme } from "../../context/ThemeContext";
 
 const customers = [
+=======
+
+const medicines = [
+  
+>>>>>>> 81b16dff066a757a4c18d8311ce5af0e248854b7
   {
     customer: "Abu Bin Ishtiyak",
     email: "larson@example.com",
@@ -31,9 +37,14 @@ const customers = [
   },
 ];
 
+<<<<<<< HEAD
 const CustomerList = () => {
   const { t } = useTranslation();
   const { theme } = useTheme();
+=======
+const MedicineList = () => {
+  const { t } = useTranslation();
+>>>>>>> 81b16dff066a757a4c18d8311ce5af0e248854b7
   const [openMenu, setOpenMenu] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -70,16 +81,25 @@ const CustomerList = () => {
   return (
     <div className="p-3 bg-white dark:bg-gray-900 shadow-md dark:shadow-gray-800 rounded-md overflow-x-auto">
       <div className="flex justify-between mb-6">
+<<<<<<< HEAD
         <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200">
           {t("customerlist.CustomerListTitle")}
         </h2>
+=======
+        <h2 className="text-2xl font-bold">{t("ListCustomer.CustomerList")}</h2>
+>>>>>>> 81b16dff066a757a4c18d8311ce5af0e248854b7
       </div>
 
       <div className="flex flex-wrap gap-4 mb-4">
         <input
           type="text"
+<<<<<<< HEAD
           placeholder={t("customerlist.SearchPlaceholder")}
           className="border border-gray-300 dark:border-gray-600 p-2 rounded-md focus:outline-green-500 dark:bg-gray-700 dark:text-gray-200 dark:placeholder-gray-400"
+=======
+          placeholder={t("ListCustomer.Search")}
+          className="border p-2 rounded-md focus:outline-green-500"
+>>>>>>> 81b16dff066a757a4c18d8311ce5af0e248854b7
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -89,6 +109,7 @@ const CustomerList = () => {
         <table className="w-full min-w-[600px] bg-white dark:bg-gray-800 shadow-md dark:shadow-gray-700 rounded-lg border border-gray-200 dark:border-gray-600">
           <thead className="border border-gray-200 dark:border-gray-600">
             <tr>
+<<<<<<< HEAD
               <td className="px-6 py-2 text-left text-gray-400 dark:text-gray-300">
                 {t("customerlist.Customer")}
               </td>
@@ -109,6 +130,18 @@ const CustomerList = () => {
               </td>
               <td className="p-3 text-left text-gray-400 dark:text-gray-300">
                 {t("customerlist.Actions")}
+=======
+              <td className="px-6 py-2 text-left text-gray-400">{t("ListCustomer.Customer")}</td>
+              <td className="px-6 py-2 text-left text-gray-400">{t("ListCustomer.ID")}</td>
+              <td className="px-6 py-2 text-left text-gray-400">{t("ListCustomer.Phone")}</td>
+              <td className="px-6 py-2 text-left text-gray-400">
+                {t("ListCustomer.PurchaseDetails")}
+              </td>
+              <td className="px-6 py-2 text-left text-gray-400">{t("ListCustomer.Amount")}</td>
+              <td className="px-6 py-2 text-left text-gray-400">Status</td>
+              <td className="p-3 text-left text-gray-400">
+                <FaEllipsisH className="hover:text-green-600 text-xl cursor-pointer"></FaEllipsisH>
+>>>>>>> 81b16dff066a757a4c18d8311ce5af0e248854b7
               </td>
             </tr>
           </thead>

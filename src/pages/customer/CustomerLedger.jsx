@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useTranslation } from "../../hooks/useTranslation";
+
 
 const medicines = [
   {
@@ -25,6 +27,7 @@ const medicines = [
 ];
 
 const CustomerLedger = () => {
+  const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [searchTerm, setSearchTerm] = useState("");
@@ -51,12 +54,12 @@ const CustomerLedger = () => {
 
   return (
     <div className="p-6 bg-white shadow-md rounded-md overflow-x-auto">
-      <h2 className="text-2xl font-bold mb-2 text-gray-500">Customer Ledger</h2>
+      <h2 className="text-2xl font-bold mb-2 text-gray-500">{t("CustomerLedger.CustomerLedger")}</h2>
 
       <div className="flex flex-wrap gap-4 mb-4">
         <input
           type="text"
-          placeholder="Find ID ..."
+          placeholder={t("CustomerLedger.Search")}
           className="border p-2 rounded-md focus:outline-green-500"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
@@ -67,7 +70,7 @@ const CustomerLedger = () => {
             htmlFor=""
             className="me-2 text-gray-400 text-xs font-extralight"
           >
-            Filter by Choose start date
+            {t("CustomerLedger.ChooseStartDate")}
           </label>
           <input
             type="date"
@@ -82,7 +85,7 @@ const CustomerLedger = () => {
             htmlFor=""
             className="me-2 text-gray-400 text-xs font-extralight"
           >
-            Choose end date
+            {t("CustomerLedger.ChooseEndDate")}
           </label>
           <input
             type="date"
@@ -99,19 +102,19 @@ const CustomerLedger = () => {
           <thead className="border">
             <tr>
               <td className="p-3 text-left text-gray-400 font-light text-[13px]">
-                ID
+                {t("CustomerLedger.ID")}
               </td>
               <td className="p-3 text-left text-gray-400 font-light text-[13px]">
-                Date
+                {t("CustomerLedger.Date")}
               </td>
               <td className="p-3 text-left text-gray-400 font-light text-[13px]">
-                Debit (USD)
+                {t("CustomerLedger.Debit")}
               </td>
               <td className="p-3 text-left text-gray-400 font-light text-[13px]">
-                Credit (USD)
+                {t("CustomerLedger.Credit")}
               </td>
               <td className="p-3 text-left text-gray-400 font-light text-[13px]">
-                Balance (USD)
+                {t("CustomerLedger.Balance")}
               </td>
             </tr>
           </thead>
@@ -141,7 +144,7 @@ const CustomerLedger = () => {
       <div className="flex flex-wrap items-center justify-between mt-4">
         <div className="flex items-center space-x-2">
           <span className="text-gray-400 font-light text-[13px]">
-            Rows per page:
+            {t("CustomerLedger.RowsPerPage")}
           </span>
           <select
             className="border p-2 rounded-md"
@@ -163,11 +166,11 @@ const CustomerLedger = () => {
             className="px-3 py-1 border rounded-md text-gray-400 font-light text-[13px]"
             disabled={currentPage === 1}
           >
-            Previous
+            {t("CustomerLedger.Previous")}
           </button>
 
           <span className="text-gray-400 font-light text-[13px]">
-            Page {currentPage} of {totalPages}
+            {t("CustomerLedger.Page")} {currentPage} {t("CustomerLedger.Of")} {totalPages}
           </span>
 
           <button
@@ -177,7 +180,7 @@ const CustomerLedger = () => {
             className="px-3 py-1 border rounded-md text-gray-400 font-light text-[13px]"
             disabled={currentPage === totalPages}
           >
-            Next
+            {t("CustomerLedger.Next")}
           </button>
         </div>
       </div>

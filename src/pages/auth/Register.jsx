@@ -56,7 +56,7 @@ const Register = () => {
       <div className="bg-white shadow-md rounded-md flex flex-col md:flex-row w-full max-w-4xl p-6">
         <div className="flex flex-col justify-center md:w-1/2 p-4 text-center md:text-left">
           <h1 className="font-bold text-2xl md:text-3xl mb-3 font-header text-green-500">
-            {t("register.Welcomes")} <br /> Panharith Pharmacy
+            {t("register.Welcomes")} <br /> {t("register.Panharith-Pharmacy")}
           </h1>
           <p className="text-gray-500 text-sm md:text-base">
             {t("register.Pleaseenter")}
@@ -68,13 +68,13 @@ const Register = () => {
             <p className="text-green-600 text-lg font-semibold">Sign Up</p>
 
             <div>
-              <label className="block text-gray-700">Full Name</label>
+              <label className="block text-gray-700">{t("register.FullName")}</label>
               <input
                 type="text"
                 name="name"
                 required
                 autoComplete="off"
-                placeholder="Enter your full name"
+                placeholder={t("register.EnterFullName")}
                 value={formData.name}
                 onChange={handleChange}
                 className="w-full bg-gray-200 px-4 py-2 mt-2 rounded-md shadow-md focus:outline-green-500"
@@ -82,13 +82,13 @@ const Register = () => {
             </div>
 
             <div>
-              <label className="block text-gray-700">Email</label>
+              <label className="block text-gray-700">{t("register.Email")}</label>
               <input
                 type="email"
                 name="email"
                 required
                 autoComplete="off"
-                placeholder="Enter email"
+                placeholder={t("register.EnterEmail")}
                 value={formData.email}
                 onChange={handleChange}
                 className="w-full bg-gray-200 px-4 py-2 mt-2 rounded-md shadow-md focus:outline-green-500"
@@ -96,13 +96,13 @@ const Register = () => {
             </div>
 
             <div>
-              <label className="block text-gray-700">Phone</label>
+              <label className="block text-gray-700">{t("register.Phone")}</label>
               <input
                 type="text"
                 name="phone"
                 required
                 autoComplete="off"
-                placeholder="Enter phone number"
+                placeholder={t("register.EnterPhone")}
                 value={formData.phone}
                 onChange={handleChange}
                 className="w-full bg-gray-200 px-4 py-2 mt-2 rounded-md shadow-md focus:outline-green-500"
@@ -110,13 +110,13 @@ const Register = () => {
             </div>
 
             <div>
-              <label className="block text-gray-700">Password</label>
+              <label className="block text-gray-700">{t("register.Password")}</label>
               <input
                 type="password"
                 name="password"
                 required
                 autoComplete="new-password"
-                placeholder="Enter password"
+                placeholder={t("register.EnterPassword")}
                 value={formData.password}
                 onChange={handleChange}
                 className="w-full bg-gray-200 px-4 py-2 mt-2 rounded-md shadow-md focus:outline-green-500"
@@ -124,13 +124,13 @@ const Register = () => {
             </div>
 
             <div>
-              <label className="block text-gray-700">Confirm Password</label>
+              <label className="block text-gray-700">{t("register.ConfirmPass")}</label>
               <input
                 type="password"
                 name="confirmPassword"
                 required
                 autoComplete="new-password"
-                placeholder="Confirm password"
+                placeholder={t("register.EnterConfirmPassword")}
                 value={formData.confirmPassword}
                 onChange={handleChange}
                 className="w-full bg-gray-200 px-4 py-2 mt-2 rounded-md shadow-md focus:outline-green-500"
