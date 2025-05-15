@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import { FaEllipsisV } from "react-icons/fa";
 import { BiEdit, BiShow, BiTrash } from "react-icons/bi";
 import { MdWarehouse } from "react-icons/md";
+import { useTranslation } from "../../hooks/useTranslation";
+
+const MedicineList = () => {
+  const { t } = useTranslation();
+
+
 const medicines = [
   {
     name: "Zimax",
@@ -139,25 +145,25 @@ const MedicineList = () => {
               return (
                 <tr key={index} className="border text-xs sm:text-base">
                   <td className="p-3  text-[13px]  text-gray-400">
-                    {med.name}
+                    { t("med.name")}
                   </td>
                   <td className="p-3  text-[13px] text-gray-400">
-                    {med.generic}
+                    { t("med.generic")}
                   </td>
                   <td className="p-3  text-[13px] text-gray-400">
-                    {med.weight}
+                    { t("med.weight")}
                   </td>
                   <td className="p-3  text-[13px] text-gray-400">
-                    {med.category}
+                    { t("med.category")}
                   </td>
                   <td className="p-3  text-[13px] text-gray-400">
-                    {med.price}
+                    { t("med.price")}
                   </td>
                   <td className="p-3  text-[13px] text-gray-400">
-                    {med.stock}
+                    { t("med.stock")}
                   </td>
                   <td className={`p-3 text-[13px]   ${color}`}>{text}</td>
-                  <td className="p-3  text-[13px] text-gray-400">{med.date}</td>
+                  <td className="p-3  text-[13px] text-gray-400">{ t("med.date")}</td>
                   <td className="p-3  text-[13px] relative">
                     <button
                       className="p-2 bg-gray-00 rounded-full hover:bg-gray-300"
@@ -239,6 +245,7 @@ const MedicineList = () => {
       </div>
     </div>
   );
+}
 };
 
 export default MedicineList;

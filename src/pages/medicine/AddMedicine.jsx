@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import BarcodeScannerComponent from "react-qr-barcode-scanner";
 // import axios from "axios"; // Uncomment when ready to use API
 import { useTranslation } from "../../hooks/useTranslation";
 
 const AddMedicine = () => {
-  const { t, langCode } = useTranslation();
+  const { t } = useTranslation();
 
   // State for medicine form
   const [medicine, setMedicine] = useState({
@@ -227,7 +227,7 @@ const AddMedicine = () => {
             <label htmlFor="barcode_number" className="mb-2">
               {t("add-medicine.BarcodeScan")}
             </label>
-            <div className="border border-gray-400 text-xs font-light focus-within:outline-green-400 focus-within:border-green-700 z-10 rounded-sm px-6 py-2 cursor-pointer relative">
+            <div className="border border-gray-400 text-xs font-light focus-within:outline-green-400 focus-within:border-green-700  rounded-sm px-6 py-2 cursor-pointer relative">
               <input
                 id="barcode_number"
                 type="text"
@@ -283,8 +283,8 @@ const AddMedicine = () => {
               required
             >
               <option value="">{t("add-medicine.Status-PlaceHolder")}</option>
-              <option value="active">{t("add-medicine.Active")}</option>
-              <option value="inactive">{t("add-medicine.Inactive")}</option>
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
             </select>
           </div>
 

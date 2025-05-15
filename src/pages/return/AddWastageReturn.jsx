@@ -1,7 +1,9 @@
 import { useState } from "react";
-import React from "react";
+import { useTranslation } from "../../hooks/useTranslation";
+
 
 const AddWastageReturn = () => {
+  const { t } = useTranslation();
   //check amount input
   const [amount, setAmount] = useState("");
 
@@ -17,9 +19,9 @@ const AddWastageReturn = () => {
       <div className="p-4 bg-white rounded-md shadow-md w-full max-w-6xl mx-auto">
         <div className="mb-4 flex flex-col md:flex-row justify-between items-start md:items-center">
           <div>
-            <h1 className="text-lg font-semibold">Add Wastage Return</h1>
+            <h1 className="text-lg font-semibold">{t("AddWastageReturn.AddWastageReturn")}</h1>
             <p className="text-gray-600">
-              You can add a wastage return by fill these field.
+              {t("AddWastageReturn.AddWastageReturn-Description")}
             </p>
           </div>
         </div>
@@ -29,13 +31,13 @@ const AddWastageReturn = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="flex flex-col">
               <label htmlFor="" className="mb-2">
-                Customer
+                {t("AddWastageReturn.EnterCustomerName")}
               </label>
 
               <input
                 type="text"
                 name="customer"
-                placeholder="Customer"
+                placeholder={t("AddWastageReturn.CustomerName")}
                 // value={medicine.medicine_name}
                 // onChange={handleChange}
                 className="border border-gray-400   px-2 text-sm py-2 rounded-[4px] font-light   focus:outline-green-400  focus:border-green-700 focus:placeholder:text-green-400"
@@ -45,12 +47,12 @@ const AddWastageReturn = () => {
 
             <div className="flex flex-col">
               <label htmlFor="" className="mb-2 font-medium ">
-                Seller
+                {t("AddWastageReturn.EnterSeller")}
               </label>
 
               <input
                 type="text"
-                placeholder="Seller"
+                placeholder={t("AddWastageReturn.Seller")}
                 name="seller"
                 // value={medicine.price}
                 // onChange={handleChange}
@@ -60,12 +62,12 @@ const AddWastageReturn = () => {
             </div>
             <div className="flex flex-col">
               <label htmlFor="" className="mb-2">
-                Email
+                {t("AddWastageReturn.EnterEmail")}
               </label>
 
               <input
                 type="text"
-                placeholder="Email"
+                placeholder={t("AddWastageReturn.Email")}
                 name="email"
                 // value={medicine.price}
                 // onChange={handleChange}
@@ -75,12 +77,12 @@ const AddWastageReturn = () => {
             </div>
             <div className="flex flex-col">
               <label htmlFor="" className="mb-2">
-                Product Name
+                {t("AddWastageReturn.EnterProductName")}
               </label>
 
               <input
                 type="text"
-                placeholder="Product Name"
+                placeholder={t("AddWastageReturn.ProductName")}
                 name="productname"
                 // value={medicine.price}
                 // onChange={handleChange}
@@ -91,12 +93,12 @@ const AddWastageReturn = () => {
 
             <div className="flex flex-col">
               <label htmlFor="" className="mb-2">
-                Generic Name
+                {t("AddWastageReturn.EnterGenericName")}
               </label>
 
               <input
                 type="text"
-                placeholder="Generic Name"
+                placeholder={t("AddWastageReturn.GenericName")}
                 name="genericname"
                 // value={medicine.weight}
                 // onChange={handleChange}
@@ -106,7 +108,7 @@ const AddWastageReturn = () => {
             </div>
             <div className="flex flex-col">
               <label htmlFor="" className="mb-2">
-                Category
+                {t("AddWastageReturn.EnterCategory")}
               </label>
 
               <select
@@ -124,7 +126,7 @@ const AddWastageReturn = () => {
 
             <div className="flex flex-col">
               <label htmlFor="" className="mb-2">
-                Invoice No
+                {t("AddWastageReturn.EnterInvoiceNo")}
               </label>
 
               <input
@@ -132,14 +134,14 @@ const AddWastageReturn = () => {
                 name="invoiceno"
                 // onChange={handleChange}
                 // value={medicine.generic_name}
-                placeholder="Invoice No"
+                placeholder={t("AddWastageReturn.InvoiceNo")}
                 className="border border-gray-400   px-2 text-sm py-2 rounded-[4px] font-light   focus:outline-green-400  focus:border-green-700 focus:placeholder:text-green-400"
                 required
               />
             </div>
             <div className="flex flex-col">
               <label htmlFor="amount" className="mb-2">
-                Amount
+                {t("AddWastageReturn.EnterAmount")}
               </label>
 
               <input
@@ -147,14 +149,14 @@ const AddWastageReturn = () => {
                 name="amount"
                 value={amount}
                 onChange={handleChange}
-                placeholder="Amount"
+                placeholder={t("AddWastageReturn.Amount")}
                 className="border border-gray-400   px-2 text-sm py-2 rounded-[4px] font-light   focus:outline-green-400  focus:border-green-700 focus:placeholder:text-green-400"
                 required
               />
             </div>
             <div className="flex flex-col">
               <label htmlFor="" className="mb-2">
-                Reason
+                {t("AddWastageReturn.EnterReason")}
               </label>
 
               <select
@@ -163,14 +165,14 @@ const AddWastageReturn = () => {
                 // value={medicine.status}
                 required
               >
-                <option value="Worng Medication<">Worng Medication</option>
-                <option value="Worng Dispensing<">Worng Dispensing</option>
-                <option value="Subsidence Symptoms">Subsidence Symptoms</option>
+                <option value="Worng Medication<">{t("AddWastageReturn.ReasonWrongMedicine")}</option>
+                <option value="Worng Dispensing<">{t("AddWastageReturn.ReasonWorngDispensing")}</option>
+                <option value="Subsidence Symptoms">{t("AddWastageReturn.ReasonSubsidenceSymptoms")}</option>
               </select>
             </div>
             <div className="flex flex-col">
               <label htmlFor="" className="mb-2">
-                Quantity
+                {t("AddWastageReturn.EnterQuantity")}
               </label>
 
               <input
@@ -178,14 +180,14 @@ const AddWastageReturn = () => {
                 name="quantity"
                 // onChange={handleChange}
                 // value={medicine.generic_name}
-                placeholder=" Quantity"
+                placeholder={t("AddWastageReturn.Quantity")}
                 className="border border-gray-400   px-2 text-sm py-2 rounded-[4px] font-light   focus:outline-green-400  focus:border-green-700 focus:placeholder:text-green-400"
                 required
               />
             </div>
             <div className="flex flex-col">
               <label htmlFor="" className="mb-2">
-                Date
+                {t("AddWastageReturn.EnterDate")}
               </label>
 
               <input
@@ -193,7 +195,7 @@ const AddWastageReturn = () => {
                 name="date"
                 // onChange={handleChange}
                 // value={medicine.generic_name}
-                placeholder="Date"
+                placeholder=  {t("AddWastageReturn.Date")}
                 className="border border-gray-400   px-2 text-sm py-2 rounded-[4px] font-light   focus:outline-green-400  focus:border-green-700 focus:placeholder:text-green-400"
                 required
               />
@@ -201,7 +203,7 @@ const AddWastageReturn = () => {
 
             <div className="flex flex-col">
               <label htmlFor="" className="mb-2">
-                Status
+                {t("AddWastageReturn.EnterStatus")}
               </label>
 
               <select
@@ -217,10 +219,10 @@ const AddWastageReturn = () => {
 
             <div className="flex flex-col ">
               <label htmlFor="" className="mb-2">
-                Description
+                {t("AddWastageReturn.EnterDescription")}
               </label>
               <textarea
-                placeholder="Description"
+                placeholder={t("AddWastageReturn.Description")}
                 name="description"
                 // onChange={handleChange}
                 // value={medicine.medicine_detail}
@@ -234,7 +236,7 @@ const AddWastageReturn = () => {
               type="submit"
               className="bg-green-500 text-white px-6 py-3 rounded-md w-full md:w-auto shadow-md active:shadow-none"
             >
-              Add Return
+              {t("AddWastageReturn.AddWastageReturnButton")}
             </button>
           </div>
         </form>

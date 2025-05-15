@@ -1,7 +1,9 @@
 import { useState } from "react";
 import React from "react";
+import { useTranslation } from "../../hooks/useTranslation";
 
 const AddCustomer = () => {
+  const { t } = useTranslation();
   //check amount input
   const [amount, setAmount] = useState("");
 
@@ -17,9 +19,9 @@ const AddCustomer = () => {
       <div className="p-4 bg-white rounded-md shadow-md w-full max-w-6xl mx-auto">
         <div className="mb-4 flex flex-col md:flex-row justify-between items-start md:items-center">
           <div>
-            <h1 className="text-lg font-semibold">Add Customer</h1>
+            <h1 className="text-lg font-semibold">{t("InsertCustomer.AddCustomer")}</h1>
             <p className="text-gray-600">
-              You can add a customer by fil these field.
+              {t("InsertCustomer.AddCustomer-Description")}
             </p>
           </div>
         </div>
@@ -29,13 +31,13 @@ const AddCustomer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="flex flex-col">
               <label htmlFor="" className="mb-2">
-                Name
+                {t("InsertCustomer.CustomerName")}
               </label>
 
               <input
                 type="text"
                 name="name"
-                placeholder="Name"
+                placeholder={t("InsertCustomer.Name")}
                 // value={medicine.medicine_name}
                 // onChange={handleChange}
                 className="border border-gray-400   px-2 text-sm py-2 rounded-[4px] font-light   focus:outline-green-400  focus:border-green-700 focus:placeholder:text-green-400"
@@ -45,12 +47,12 @@ const AddCustomer = () => {
 
             <div className="flex flex-col">
               <label htmlFor="" className="mb-2 font-medium ">
-                Phone
+                {t("InsertCustomer.EnterPhone")}
               </label>
 
               <input
                 type="text"
-                placeholder="Phone"
+                placeholder={t("InsertCustomer.Phone")}
                 name="phone"
                 // value={medicine.price}
                 // onChange={handleChange}
@@ -60,12 +62,12 @@ const AddCustomer = () => {
             </div>
             <div className="flex flex-col">
               <label htmlFor="" className="mb-2">
-                Email
+                {t("InsertCustomer.EnterEmail")}
               </label>
 
               <input
                 type="text"
-                placeholder="Email"
+                placeholder={t("InsertCustomer.Email")}
                 name="email"
                 // value={medicine.price}
                 // onChange={handleChange}
@@ -75,12 +77,12 @@ const AddCustomer = () => {
             </div>
             <div className="flex flex-col">
               <label htmlFor="" className="mb-2">
-                Adddress
+                {t("InsertCustomer.EnterAddress")}
               </label>
 
               <input
                 type="text"
-                placeholder="Adddress"
+                placeholder={t("InsertCustomer.Address")}
                 name="address"
                 // value={medicine.price}
                 // onChange={handleChange}
@@ -91,12 +93,12 @@ const AddCustomer = () => {
 
             <div className="flex flex-col">
               <label htmlFor="" className="mb-2">
-                Purchased Item
+                {t("InsertCustomer.PurchasedItem")}
               </label>
 
               <input
                 type="text"
-                placeholder="Item"
+                placeholder={t("InsertCustomer.Item")}
                 name="item"
                 // value={medicine.weight}
                 // onChange={handleChange}
@@ -107,7 +109,7 @@ const AddCustomer = () => {
 
             <div className="flex flex-col">
               <label htmlFor="" className="mb-2">
-                Purchased Quantity
+                {t("InsertCustomer.PurchasedQuantity")}
               </label>
 
               <input
@@ -115,14 +117,14 @@ const AddCustomer = () => {
                 name="quantity"
                 // onChange={handleChange}
                 // value={medicine.generic_name}
-                placeholder="Quantity"
+                placeholder={t("InsertCustomer.Quantity")}
                 className="border border-gray-400   px-2 text-sm py-2 rounded-[4px] font-light   focus:outline-green-400  focus:border-green-700 focus:placeholder:text-green-400"
                 required
               />
             </div>
             <div className="flex flex-col">
               <label htmlFor="amount" className="mb-2">
-                Amount
+                {t("InsertCustomer.PurchasedAmount")}
               </label>
 
               <input
@@ -130,7 +132,7 @@ const AddCustomer = () => {
                 name="amount"
                 value={amount}
                 onChange={handleChange}
-                placeholder="Amount"
+                placeholder={t("InsertCustomer.Amount")}
                 className="border border-gray-400   px-2 text-sm py-2 rounded-[4px] font-light   focus:outline-green-400  focus:border-green-700 focus:placeholder:text-green-400"
                 required
               />
@@ -138,7 +140,7 @@ const AddCustomer = () => {
 
             <div className="flex flex-col">
               <label htmlFor="" className="mb-2">
-                Status
+                {t("InsertCustomer.Status")}
               </label>
 
               <select
@@ -154,10 +156,10 @@ const AddCustomer = () => {
 
             <div className="flex flex-col ">
               <label htmlFor="" className="mb-2">
-                Customer Detials
+                {t("InsertCustomer.EnterCustomerDetails")}
               </label>
               <textarea
-                placeholder="Customer Details"
+                placeholder={t("InsertCustomer.CustomerDetails")}
                 name="customer_detail"
                 // onChange={handleChange}
                 // value={medicine.medicine_detail}
@@ -171,7 +173,7 @@ const AddCustomer = () => {
               type="submit"
               className="bg-green-500 text-white px-6 py-3 rounded-md w-full md:w-auto shadow-md active:shadow-none"
             >
-              Add Customer
+              {t("InsertCustomer.AddCustomerButton")}
             </button>
           </div>
         </form>

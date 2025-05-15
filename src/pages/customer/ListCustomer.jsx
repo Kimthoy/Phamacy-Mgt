@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { FaEllipsisH } from "react-icons/fa";
 import { BiEdit, BiTrash } from "react-icons/bi";
+import { useTranslation } from "../../hooks/useTranslation";
 
 const medicines = [
+  
   {
     customer: "Abu Bin Ishtiyak",
     email: "larson@example.com",
@@ -30,6 +32,7 @@ const medicines = [
 ];
 
 const MedicineList = () => {
+  const { t } = useTranslation();
   const [openMenu, setOpenMenu] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -59,13 +62,13 @@ const MedicineList = () => {
   return (
     <div className="p-3 bg-white shadow-md rounded-md overflow-x-auto">
       <div className="flex justify-between mb-6">
-        <h2 className="text-2xl font-bold">Customer Lists</h2>
+        <h2 className="text-2xl font-bold">{t("ListCustomer.CustomerList")}</h2>
       </div>
 
       <div className="flex flex-wrap gap-4 mb-4 ">
         <input
           type="text"
-          placeholder="Search by name..."
+          placeholder={t("ListCustomer.Search")}
           className="border p-2 rounded-md focus:outline-green-500"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
@@ -76,13 +79,13 @@ const MedicineList = () => {
         <table className="w-full min-w-[600px] bg-white shadow-md rounded-lg border">
           <thead className="border">
             <tr>
-              <td className="px-6 py-2 text-left text-gray-400">Customer</td>
-              <td className="px-6 py-2 text-left text-gray-400">ID</td>
-              <td className="px-6 py-2 text-left text-gray-400">Phone</td>
+              <td className="px-6 py-2 text-left text-gray-400">{t("ListCustomer.Customer")}</td>
+              <td className="px-6 py-2 text-left text-gray-400">{t("ListCustomer.ID")}</td>
+              <td className="px-6 py-2 text-left text-gray-400">{t("ListCustomer.Phone")}</td>
               <td className="px-6 py-2 text-left text-gray-400">
-                Purchase Details
+                {t("ListCustomer.PurchaseDetails")}
               </td>
-              <td className="px-6 py-2 text-left text-gray-400">Amount</td>
+              <td className="px-6 py-2 text-left text-gray-400">{t("ListCustomer.Amount")}</td>
               <td className="px-6 py-2 text-left text-gray-400">Status</td>
               <td className="p-3 text-left text-gray-400">
                 <FaEllipsisH className="hover:text-green-600 text-xl cursor-pointer"></FaEllipsisH>
