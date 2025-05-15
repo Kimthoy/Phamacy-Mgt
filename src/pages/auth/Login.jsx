@@ -36,7 +36,6 @@ const Login = () => {
     }
   };
 
-
   return (
     <section className="flex justify-center items-center min-h-screen bg-gray-100 px-4">
       <div className="bg-white shadow-md rounded-md flex flex-col md:flex-row w-full max-w-4xl p-6">
